@@ -52,13 +52,13 @@ def Solution(id_list, report, k) :
 
   return mail
 
-# id_list = ["muzi", "frodo", "apeach", "neo"]
-# report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
-# k = 2
+id_list = ["muzi", "frodo", "apeach", "neo"]
+report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
+k = 2
 
-id_list = ["con", "ryan"]
-report = ["ryan con", "ryan con", "ryan con", "ryan con"]
-k = 3
+# id_list = ["con", "ryan"]
+# report = ["ryan con", "ryan con", "ryan con", "ryan con"]
+# k = 3
 
 result = Solution(id_list, report, k)
 print(result)
