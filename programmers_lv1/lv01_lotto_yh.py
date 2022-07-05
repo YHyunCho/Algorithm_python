@@ -24,11 +24,11 @@ def solution(lottos, win_nums) :
 
   maximum_nums = minimum_nums + zero   
 
-  for i in range(0, len(rank)) :       # Compare the 'rank' to the 'maximum_nums'
+  for i in range(len(rank)) :       # Compare the 'rank' to the 'maximum_nums'
     if maximum_nums == i :
       rank_num.append(rank[i])         
 
-  for i in range(0, len(rank)) :       # Compare the 'rank' to the 'minimum_nums'
+  for i in range(len(rank)) :       # Compare the 'rank' to the 'minimum_nums'
      if minimum_nums == i :
        rank_num.append(rank[i]) 
 
