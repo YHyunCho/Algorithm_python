@@ -8,7 +8,6 @@
 def solution(lottos, win_nums) :
 
   minimum_nums = 0
-  test = 0
   rank = [6, 6, 5, 4, 3, 2, 1]
   rank_num = []
 
