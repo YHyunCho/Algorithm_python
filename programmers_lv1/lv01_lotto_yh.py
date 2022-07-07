@@ -8,24 +8,22 @@
 def solution(lottos, win_nums) :
 
   minimum_nums = 0
+  test = 0
   rank = [6, 6, 5, 4, 3, 2, 1]
   rank_num = []
 
-  for i in lottos :                    # Compare the numbers of 'lottos' with list of 'win_nums' except 0
-    for j in win_nums :
-      if i == j :
-        minimum_nums += 1
-        j = ''                         # To avoid duplication in for loop
+  for i in win_nums :                  # Compare the numbers of 'lottos' with list of 'win_nums' except 0
+    minimum_nums += lottos.count(i)
 
   zero = lottos.count(0)               # find 0
 
   maximum_nums = minimum_nums + zero   
 
-  for i in range(len(rank)) :       # Compare the 'rank' to the 'maximum_nums'
+  for i in range(len(rank)) :          # Compare the 'rank' to the 'maximum_nums'
     if maximum_nums == i :
       rank_num.append(rank[i])         
 
-  for i in range(len(rank)) :       # Compare the 'rank' to the 'minimum_nums'
+  for i in range(len(rank)) :          # Compare the 'rank' to the 'minimum_nums'
      if minimum_nums == i :
        rank_num.append(rank[i]) 
 
