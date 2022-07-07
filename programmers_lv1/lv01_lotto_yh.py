@@ -1,4 +1,4 @@
-# PROGRAMMERS LV01 신고 결과 받기
+# PROGRAMMERS LV01 로또의 최고 순위와 최저 순위
 # https://school.programmers.co.kr/learn/courses/30/lessons/77484
 
 # 작성자 : 조예현
@@ -8,7 +8,6 @@
 def solution(lottos, win_nums) :
 
   minimum_nums = 0
-  zero = 0
   rank = [6, 6, 5, 4, 3, 2, 1]
   rank_num = []
 
@@ -18,9 +17,7 @@ def solution(lottos, win_nums) :
         minimum_nums += 1
         j = ''                         # To avoid duplication in for loop
 
-  for i in lottos :                    # find 0
-    if i == 0 :
-      zero += 1
+  zero = lottos.count(0)               # find 0
 
   maximum_nums = minimum_nums + zero   
 

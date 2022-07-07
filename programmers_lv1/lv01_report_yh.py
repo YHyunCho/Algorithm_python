@@ -3,16 +3,14 @@
 
 # 작성자 : 조예현
 # 최초 작성일 : 2022-07-05
-# 최종 작성일 : 2022-07-
+# 최종 작성일 : 2022-07-07
 from collections import defaultdict
 
 def solution(id_list, report, k) :
 
-  report_list = []  
   reported_dict = defaultdict(int)     
   report_dict = defaultdict(set)
   answer = []
-
   report = list(set(report))
 
   for i in report :
