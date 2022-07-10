@@ -9,9 +9,11 @@ def solution(s) :
   
   answer = True
 
+  # checking the length of 's'
   if len(s) != 4 and len(s) != 6 :
     answer = False
   else : 
+    # 'isdigit' is the method whether it's a number or not
     answer = s.isdigit()
 
   return answer

@@ -3,7 +3,7 @@
 
 # 작성자 : 조예현
 # 최초 작성일 : 2022-07-08
-# 최종 작성일 : 2022-07
+# 최종 작성일 : 2022-07-10
 
 def solution(s) :
   eng_number = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -11,9 +11,10 @@ def solution(s) :
 
   for i in range(len(eng_number)) :
     if eng_number[i] in s :
+      # 'replace' is the function to change the char of the string
       s = s.replace(eng_number[i], str(i))
 
-  return int(s)
+  return int(s) # change 's' to integers
 
 s = "one4seveneight"
 # s = "23four5six7"
