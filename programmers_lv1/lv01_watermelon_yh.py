@@ -1,3 +1,10 @@
+# PROGRAMMERS Lv1 수박수박수박수박수박수?
+# https://school.programmers.co.kr/learn/courses/30/lessons/12922
+
+# 작성자 : 조예현
+# 최초 작성일 : 2022-07-15
+# 최종 작성일 : 2022-07-15
+
 def solution(n) :
   answer = ''
   watermelon = '수박'
