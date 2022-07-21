@@ -3,18 +3,18 @@
 
 # 작성자 : 조예현
 # 최초 작성일 : 2022-07-15
-# 최종 작성일 : 2022-07-15
+# 최종 작성일 : 2022-07-21
 
 def solution(a, b) :
   answer = ''
-  date = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-  day = ['0', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU']
+  month = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  day = ['THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED']
 
-  day_cul = int(b / 7) * 7
-  b -= day_cul
+  date = (sum(month[:a]) + b) % 7
 
-  print(day[b])
-  
+  answer = day[date]
+
+  return answer
 
 a = 5
 b = 24
