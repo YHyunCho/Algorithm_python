@@ -24,7 +24,6 @@ def solution(new_id):
       answer = answer.replace('..', '.')
 
     # step4
-    #answer = list(answer)
     if answer.find('.') == 0 : 
       answer = answer[1:]  
 
@@ -36,7 +35,6 @@ def solution(new_id):
       answer = 'a'
 
     # step6
-    print(len(answer))
     if len(answer) >= 16 :
       answer = answer[:15]
       if answer.rfind('.') == len(answer)-1 : 
