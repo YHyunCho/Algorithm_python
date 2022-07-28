@@ -21,23 +21,7 @@ def solution(dartResult):
         dartList[3][0] = 10
         dartResult = dartResult.replace('10', '--')
 
-    for i in range(1, 4) :
-        for j in range(len(dartResult)) :
-            if (ord(dartResult[j]) >= 48 and ord(dartResult[j]) <= 57) :
-                if dartList[i][0] == 0 :
-                    dartList[i][0] = int(dartResult[j])
-                    dartResult = dartResult.replace(dartResult[j], '-')
-            continue
-    print(dartResult)
-    dartResult = dartResult.split('-') 
-
-    print(dartResult)
-
-    for i in range(1, 4) :
-        dartList[i][1] = dartResult[i]
-
-    print(dartList) 
-
+    
 
           
     return answer
