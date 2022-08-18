@@ -15,7 +15,7 @@ def ChangeBinaryNum (arr, n) :
 
     if len(Bi_arr[i]) < n :         # if binary num's length is smaller than 'n'
       while len(Bi_arr[i]) != n :   # while It's 'n' in length,
-        Bi_arr[i] = '0' + Bi_arr[i] # add a zero in the front
+
 
   return Bi_arr
 
