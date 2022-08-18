@@ -3,59 +3,31 @@
 
 # 작성자 : 조예현
 # 최초 작성일 : 2022-07-28
-# 최종 작성일 : 2022-08-03
+# 최종 작성일 : 2022-08-18
 
 def solution(dartResult):
-    answer = 0
-    dartList = []
-    number = 0
+    square = {"S":1, "D":2, "T":3}                      # Dictionary that saved the square value
+    dartResult = dartResult.replace("10", "N")          # if there're "10" replace to "N"
+    stack = []
 
-    for i in range(len(dartResult)) :
-        if (ord(dartResult[i]) >= 48 and ord(dartResult[i]) <= 57) :
-            if dartResult[i+1] == '0' :
-                number = int(dartResult[i:i+2])
-                dartResult = dartResult.replace(dartResult[i+1], '_')
-                continue
+    for i in dartResult :
+        if i.isdigit() or i == "N" :                    # 'isdigit' is function checks whether a string is a number of not
+            if i == "N" :
+                stack.append(10)
             else :
-                number = int(dartResult[i])
-                continue
-        
-        if dartResult[i] == 'S' :
-            if dartResult[i] != dartResult[-1] :
-                if (ord(dartResult[i+1]) >= 48 and ord(dartResult[i+1]) <= 57) :
-                    dartList.append(number)
-                    continue
-        elif dartResult[i] == 'D' :
-            number = number ** 2
-            if dartResult[i] != dartResult[-1] :
-                if (ord(dartResult[i+1]) >= 48 and ord(dartResult[i+1]) <= 57) :
-                    dartList.append(number)
-                    continue
-        elif dartResult[i] == 'T' :
-            number = number ** 3
-            if dartResult[i] != dartResult[-1] :
-                if (ord(dartResult[i+1]) >= 48 and ord(dartResult[i+1]) <= 57) :
-                    dartList.append(number)
-                    continue
+                stack.append(int(i))
+        elif i in ["S", "D", "T"] :
+            num = stack.pop()                           # 'pop' is function returns and deletes the last element in list
+            stack.append(num ** square[i])
+        elif i =="#" :
+            stack[-1] *= -1
+        elif i =="*" :
+            num = stack.pop()
+            if len(stack) :
+                stack[-1] *= 2
+            stack.append(2 * num)
 
-        if dartResult[i] == '*' :
-            number = number * 2
-            if dartList == '' :
-                dartList.append(number) 
-                continue
-            else :
-                dartList[-1] = dartList[-1] * 2
-                dartList.append(number) 
-                continue
-        elif dartResult[i] == '#' :
-            number = -(number)
-            dartList.append(number)
-            continue
-
-        if i == len(dartResult)-1 :
-            dartList.append(number)
-          
-    return sum(dartList)
+    return sum(stack)
 
 # dartResult = '1S2D*3T'
 # dartResult = '1D2S#10S'
